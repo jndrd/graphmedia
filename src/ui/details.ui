@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<interface>
+
+
+                           
+<object class="GtkListBox" id="consultas">
+<property name="visible">True</property>
+<property name="selection-mode">none</property>
+<property name="height-request">200</property>
+</object>
+                        
+
+
+<object class="GtkScrolledWindow" id="contenedor_inicio">
+<property name="hexpand">True</property>
+<property name="vexpand">True</property>
+<property name="margin">2</property>
+
+<child>
+<object class="GtkGrid" id="inicio">
+  <property name="visible">True</property>
+  <property name="margin">1</property>
+  <property name="row-spacing">6</property>
+  <property name="column-spacing">0</property>
+  <child>
+   <object class="GtkFrame" id="v_artistas">
+      <property name="visible">True</property>
+      <property name="can-focus">False</property>
+      <property name="margin">1</property>
+      <property name="label-xalign">0</property>
+      <property name="height-request">280</property>
+      <property name="label">Artistas</property>
+      
+      <child>
+           <object class="GtkScrolledWindow" id="inicio_artistas">
+           <property name="visible">True</property>
+           <property name="hexpand">True</property>
+          <property name="vexpand">True</property>
+          <property name="margin">0</property>
+      </object>
+    </child>
+
+   </object>
+  <packing>
+    <property name="left-attach">0</property>
+    <property name="top-attach">0</property>
+  </packing>
+  </child>
+
+  <child>
+   <object class="GtkFrame" id="v_imagenes">
+      <property name="visible">True</property>
+      <property name="can-focus">False</property>
+      <property name="margin">8</property>
+      <property name="height-request">280</property>
+      <property name="label">Imagenes</property>
+      <property name="shadow-type">etched-out</property>
+       <child>
+           <object class="GtkScrolledWindow" id="inicio_imagenes">
+             <property name="visible">True</property>
+           <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <property name="margin">1</property>
+            </object>
+    </child>
+   </object>
+  <packing>
+    <property name="left-attach">0</property>
+    <property name="top-attach">1</property>
+  </packing>
+  </child>
+
+   <child>
+   <object class="GtkFrame" id="v_canciones">
+      <property name="visible">True</property>
+      <property name="can-focus">False</property>
+      <property name="margin">8</property>
+      <property name="height-request">280</property>
+      <property name="label">Canciones</property>
+      <property name="shadow-type">etched-out</property>
+       <child>
+           <object class="GtkScrolledWindow" id="inicio_canciones">
+             <property name="visible">True</property>
+           <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <property name="margin">1</property>
+            </object>
+    </child>
+   </object>
+  <packing>
+    <property name="left-attach">0</property>
+    <property name="top-attach">2</property>
+  </packing>
+  </child>
+
+     <child>
+   <object class="GtkFrame" id="v_albums">
+      <property name="visible">True</property>
+      <property name="can-focus">False</property>
+      <property name="margin">8</property>
+      <property name="height-request">280</property>
+      <property name="label">Albums Musicales</property>
+      <property name="shadow-type">etched-out</property>
+       <child>
+           <object class="GtkScrolledWindow" id="inicio_albums">
+             <property name="visible">True</property>
+           <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <property name="margin">1</property>
+            </object>
+    </child>
+   </object>
+  <packing>
+    <property name="left-attach">0</property>
+    <property name="top-attach">3</property>
+  </packing>
+  </child>
+
+</object>
+</child>
+</object>
+ </interface>

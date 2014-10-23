@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Example
+Icon=graphmedia
+StartupNotify=true
+Exec=/usr/local/bin/graphmedia
+Name[en_US]=graphmedia.desktop

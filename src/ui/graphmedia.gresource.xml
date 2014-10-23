@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gtk/graphmedia">
+    <file preprocess="xml-stripblanks">app-menu.ui</file>
+    <file preprocess="xml-stripblanks">window.ui</file>
+    <file preprocess="xml-stripblanks">gears-menu.ui</file>
+    <file preprocess="xml-stripblanks">prefs.ui</file>
+    <file preprocess="xml-stripblanks">dialogs.ui</file>
+    <file preprocess="xml-stripblanks">dialogoalbums.ui</file>
+    <file preprocess="xml-stripblanks">dialogoarchivo.ui</file>
+    <file preprocess="xml-stripblanks">home.ui</file>
+    <file preprocess="xml-stripblanks">context.ui</file>
+    <file preprocess="xml-stripblanks">details.ui</file>
+  </gresource>
+</gresources>

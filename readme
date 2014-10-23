@@ -1,0 +1,8 @@
+Para compilar el proyecto ejecutar:
+
+	autoreconf -v --force --install
+	./configure
+	make
+	make install
+
+

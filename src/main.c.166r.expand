@@ -1,0 +1,535 @@
+
+;; Function graph_media_main (graph_media_main, funcdef_no=87, decl_uid=55408, cgraph_uid=87)
+
+graph_media_main (gchar * * args, int args_length1)
+{
+  struct GraphMediaModelosGraphMediaApp * app;
+  gint result;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  # DEBUG result => 0
+  # DEBUG app => 0B
+  # DEBUG _tmp0_ => 0B
+  # DEBUG _tmp1_ => 0B
+  # DEBUG _tmp1__length1 => 0
+  # DEBUG _tmp2_ => 0
+  app_4 = graph_media_modelos_graph_media_app_new ();
+  # DEBUG _tmp0_ => app_4
+  # DEBUG app => app_4
+  # DEBUG _tmp1_ => args_5(D)
+  # DEBUG _tmp1__length1 => args_length1_6(D)
+  result_8 = g_application_run (app_4, args_length1_6(D), args_5(D));
+  # DEBUG _tmp2_ => result_8
+  # DEBUG result => result_8
+  if (app_4 != 0B)
+    goto <bb 3>;
+  else
+    goto <bb 4>;
+;;    succ:       3
+;;                4
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+  g_object_unref (app_4);
+  # DEBUG app => 0B
+;;    succ:       4
+
+;;   basic block 4, loop depth 0
+;;    pred:       3
+;;                2
+  return result_8;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 4 (app_4 - 4 )
+Partition 5 (args_5(D) - 5 )
+Partition 6 (args_length1_6(D) - 6 )
+Partition 8 (result_8 - 8 )
+
+
+Partition map 
+
+Partition 0 (args_5(D) - 5 )
+Partition 1 (args_length1_6(D) - 6 )
+
+
+Live on entry to BB2 : args_5(D)  args_length1_6(D)  
+
+Live on entry to BB3 : 
+
+Live on entry to BB4 : 
+
+Conflict graph:
+
+After sorting:
+Coalesce List:
+
+Partition map 
+
+Partition 0 (args_5(D) - 5 )
+Partition 1 (args_length1_6(D) - 6 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (app_4 - 4 )
+Partition 1 (args_5(D) - 5 )
+Partition 2 (args_length1_6(D) - 6 )
+Partition 3 (result_8 - 8 )
+
+graph_media_main (gchar * * args, int args_length1)
+{
+  struct GraphMediaModelosGraphMediaApp * app;
+  gint result;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  # DEBUG result => 0
+  # DEBUG app => 0B
+  # DEBUG _tmp0_ => 0B
+  # DEBUG _tmp1_ => 0B
+  # DEBUG _tmp1__length1 => 0
+  # DEBUG _tmp2_ => 0
+  app_4 = graph_media_modelos_graph_media_app_new ();
+  # DEBUG _tmp0_ => app_4
+  # DEBUG app => app_4
+  # DEBUG _tmp1_ => args_5(D)
+  # DEBUG _tmp1__length1 => args_length1_6(D)
+  result_8 = g_application_run (app_4, args_length1_6(D), args_5(D));
+  # DEBUG _tmp2_ => result_8
+  # DEBUG result => result_8
+  if (app_4 != 0B)
+    goto <bb 3>;
+  else
+    goto <bb 4>;
+;;    succ:       3
+;;                4
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+  g_object_unref (app_4);
+  # DEBUG app => 0B
+;;    succ:       4
+
+;;   basic block 4, loop depth 0
+;;    pred:       3
+;;                2
+  return result_8;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; # DEBUG result => 0
+
+(debug_insn 7 6 0 (var_location:SI result (const_int 0 [0])) src/main.c:20 -1
+     (nil))
+;; # DEBUG app => 0B
+
+(debug_insn 8 7 0 (var_location:DI app (const_int 0 [0])) src/main.c:21 -1
+     (nil))
+;; # DEBUG _tmp0_ => 0B
+
+(debug_insn 9 8 0 (var_location:DI _tmp0_ (const_int 0 [0])) src/main.c:22 -1
+     (nil))
+;; # DEBUG _tmp1_ => 0B
+
+(debug_insn 10 9 0 (var_location:DI _tmp1_ (const_int 0 [0])) src/main.c:23 -1
+     (nil))
+;; # DEBUG _tmp1__length1 => 0
+
+(debug_insn 11 10 0 (var_location:SI _tmp1__length1 (const_int 0 [0])) src/main.c:24 -1
+     (nil))
+;; # DEBUG _tmp2_ => 0
+
+(debug_insn 12 11 0 (var_location:SI _tmp2_ (const_int 0 [0])) src/main.c:25 -1
+     (nil))
+;; app_4 = graph_media_modelos_graph_media_app_new ();
+
+(call_insn 13 12 14 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("graph_media_modelos_graph_media_app_new") [flags 0x41]  <function_decl 0x2b2c1f768d00 graph_media_modelos_graph_media_app_new>) [0 graph_media_modelos_graph_media_app_new S1 A8])
+            (const_int 0 [0]))) src/main.c:26 -1
+     (nil)
+    (nil))
+
+(insn 14 13 0 (set (reg/v/f:DI 59 [ app ])
+        (reg:DI 0 ax)) src/main.c:26 -1
+     (nil))
+
+;; # DEBUG _tmp0_ => app_4
+
+(debug_insn 15 14 0 (var_location:DI _tmp0_ (const_int 0 [0])) src/main.c:26 -1
+     (nil))
+;; # DEBUG app => app_4
+
+(debug_insn 16 15 0 (var_location:DI app (const_int 0 [0])) src/main.c:27 -1
+     (nil))
+;; # DEBUG _tmp1_ => args_5(D)
+
+(debug_insn 17 16 0 (var_location:DI _tmp1_ (const_int 0 [0])) src/main.c:28 -1
+     (nil))
+;; # DEBUG _tmp1__length1 => args_length1_6(D)
+
+(debug_insn 18 17 0 (var_location:SI _tmp1__length1 (const_int 0 [0])) src/main.c:29 -1
+     (nil))
+;; result_8 = g_application_run (app_4, args_length1_6(D), args_5(D));
+
+(insn 19 18 20 (set (reg:DI 1 dx)
+        (reg/v/f:DI 62 [ args ])) src/main.c:30 -1
+     (nil))
+
+(insn 20 19 21 (set (reg:SI 4 si)
+        (reg/v:SI 63 [ args_length1 ])) src/main.c:30 -1
+     (nil))
+
+(insn 21 20 22 (set (reg:DI 5 di)
+        (reg/v/f:DI 59 [ app ])) src/main.c:30 -1
+     (nil))
+
+(call_insn 22 21 23 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("g_application_run") [flags 0x41]  <function_decl 0x2b2c1da89f00 g_application_run>) [0 g_application_run S1 A8])
+            (const_int 0 [0]))) src/main.c:30 -1
+     (nil)
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (expr_list:REG_BR_PRED (use (reg:SI 4 si))
+            (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 1 dx))
+                (nil)))))
+
+(insn 23 22 0 (set (reg/v:SI 60 [ result ])
+        (reg:SI 0 ax)) src/main.c:30 -1
+     (nil))
+
+;; # DEBUG _tmp2_ => result_8
+
+(debug_insn 24 23 0 (var_location:SI _tmp2_ (const_int 0 [0])) src/main.c:30 -1
+     (nil))
+;; # DEBUG result => result_8
+
+(debug_insn 25 24 0 (var_location:SI result (const_int 0 [0])) src/main.c:31 -1
+     (nil))
+;; if (app_4 != 0B)
+
+(insn 26 25 27 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/v/f:DI 59 [ app ])
+            (const_int 0 [0]))) src/main.c:32 -1
+     (nil))
+
+(jump_insn 27 26 0 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 0)
+            (pc))) src/main.c:32 -1
+     (expr_list:REG_BR_PROB (const_int 2165 [0x875])
+        (nil)))
+
+;; Generating RTL for gimple basic block 3
+
+;; g_object_unref (app_4);
+
+(insn 29 28 30 (set (reg:DI 5 di)
+        (reg/v/f:DI 59 [ app ])) src/main.c:32 -1
+     (nil))
+
+(call_insn 30 29 0 (call (mem:QI (symbol_ref:DI ("g_object_unref") [flags 0x41]  <function_decl 0x2b2c1d88b100 g_object_unref>) [0 g_object_unref S1 A8])
+        (const_int 0 [0])) src/main.c:32 -1
+     (nil)
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+
+;; # DEBUG app => 0B
+
+(debug_insn 31 30 0 (var_location:DI app (const_int 0 [0])) src/main.c:32 -1
+     (nil))
+;; Generating RTL for gimple basic block 4
+
+;; 
+
+(code_label 32 31 33 2 "" [0 uses])
+
+(note 33 32 0 NOTE_INSN_BASIC_BLOCK)
+
+;; return result_8;
+
+(insn 34 33 35 (set (reg:SI 61 [ <retval> ])
+        (reg/v:SI 60 [ result ])) src/main.c:33 -1
+     (nil))
+
+(jump_insn 35 34 36 (set (pc)
+        (label_ref 0)) src/main.c:33 -1
+     (nil))
+
+(barrier 36 35 0)
+deleting block 6
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 4, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:DI 62 [ args ])
+        (reg:DI 5 di [ args ])) src/main.c:19 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 63 [ args_length1 ])
+        (reg:SI 4 si [ args_length1 ])) src/main.c:19 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (var_location:SI result (const_int 0 [0])) src/main.c:20 -1
+     (nil))
+(debug_insn 8 7 9 2 (var_location:DI app (const_int 0 [0])) src/main.c:21 -1
+     (nil))
+(debug_insn 9 8 10 2 (var_location:DI _tmp0_ (const_int 0 [0])) src/main.c:22 -1
+     (nil))
+(debug_insn 10 9 11 2 (var_location:DI _tmp1_ (const_int 0 [0])) src/main.c:23 -1
+     (nil))
+(debug_insn 11 10 12 2 (var_location:SI _tmp1__length1 (const_int 0 [0])) src/main.c:24 -1
+     (nil))
+(debug_insn 12 11 13 2 (var_location:SI _tmp2_ (const_int 0 [0])) src/main.c:25 -1
+     (nil))
+(call_insn 13 12 14 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("graph_media_modelos_graph_media_app_new") [flags 0x41]  <function_decl 0x2b2c1f768d00 graph_media_modelos_graph_media_app_new>) [0 graph_media_modelos_graph_media_app_new S1 A8])
+            (const_int 0 [0]))) src/main.c:26 -1
+     (nil)
+    (nil))
+(insn 14 13 15 2 (set (reg/v/f:DI 59 [ app ])
+        (reg:DI 0 ax)) src/main.c:26 -1
+     (nil))
+(debug_insn 15 14 16 2 (var_location:DI _tmp0_ (reg/v/f:DI 59 [ app ])) src/main.c:26 -1
+     (nil))
+(debug_insn 16 15 17 2 (var_location:DI app (reg/v/f:DI 59 [ app ])) src/main.c:27 -1
+     (nil))
+(debug_insn 17 16 18 2 (var_location:DI _tmp1_ (reg/v/f:DI 62 [ args ])) src/main.c:28 -1
+     (nil))
+(debug_insn 18 17 19 2 (var_location:SI _tmp1__length1 (reg/v:SI 63 [ args_length1 ])) src/main.c:29 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:DI 1 dx)
+        (reg/v/f:DI 62 [ args ])) src/main.c:30 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 4 si)
+        (reg/v:SI 63 [ args_length1 ])) src/main.c:30 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:DI 5 di)
+        (reg/v/f:DI 59 [ app ])) src/main.c:30 -1
+     (nil))
+(call_insn 22 21 23 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("g_application_run") [flags 0x41]  <function_decl 0x2b2c1da89f00 g_application_run>) [0 g_application_run S1 A8])
+            (const_int 0 [0]))) src/main.c:30 -1
+     (nil)
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (expr_list:REG_BR_PRED (use (reg:SI 4 si))
+            (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 1 dx))
+                (nil)))))
+(insn 23 22 24 2 (set (reg/v:SI 60 [ result ])
+        (reg:SI 0 ax)) src/main.c:30 -1
+     (nil))
+(debug_insn 24 23 25 2 (var_location:SI _tmp2_ (reg/v:SI 60 [ result ])) src/main.c:30 -1
+     (nil))
+(debug_insn 25 24 26 2 (var_location:SI result (reg/v:SI 60 [ result ])) src/main.c:31 -1
+     (nil))
+(insn 26 25 27 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/v/f:DI 59 [ app ])
+            (const_int 0 [0]))) src/main.c:32 -1
+     (nil))
+(jump_insn 27 26 28 2 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 32)
+            (pc))) src/main.c:32 -1
+     (expr_list:REG_BR_PROB (const_int 2165 [0x875])
+        (nil))
+ -> 32)
+;;  succ:       4 [78.3%]  (FALLTHRU)
+;;              5 [21.6%] 
+
+;; basic block 4, loop depth 0, count 0, freq 7835, maybe hot
+;;  prev block 2, next block 5, flags: (NEW, REACHABLE, RTL)
+;;  pred:       2 [78.3%]  (FALLTHRU)
+(note 28 27 29 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 29 28 30 4 (set (reg:DI 5 di)
+        (reg/v/f:DI 59 [ app ])) src/main.c:32 -1
+     (nil))
+(call_insn 30 29 31 4 (call (mem:QI (symbol_ref:DI ("g_object_unref") [flags 0x41]  <function_decl 0x2b2c1d88b100 g_object_unref>) [0 g_object_unref S1 A8])
+        (const_int 0 [0])) src/main.c:32 -1
+     (nil)
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+(debug_insn 31 30 32 4 (var_location:DI app (const_int 0 [0])) src/main.c:32 -1
+     (nil))
+;;  succ:       5 [100.0%]  (FALLTHRU)
+
+;; basic block 5, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 4, next block 1, flags: (NEW, REACHABLE, RTL, MODIFIED)
+;;  pred:       4 [100.0%]  (FALLTHRU)
+;;              2 [21.6%] 
+(code_label 32 31 33 5 2 "" [1 uses])
+(note 33 32 34 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 34 33 38 5 (set (reg:SI 61 [ <retval> ])
+        (reg/v:SI 60 [ result ])) src/main.c:33 -1
+     (nil))
+(insn 38 34 41 5 (set (reg/i:SI 0 ax)
+        (reg:SI 61 [ <retval> ])) src/main.c:34 -1
+     (nil))
+(insn 41 38 0 5 (use (reg/i:SI 0 ax)) src/main.c:34 -1
+     (nil))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+
+
+;; Function main (main, funcdef_no=88, decl_uid=55421, cgraph_uid=88) (executed once)
+
+main (int argc, char * * argv)
+{
+  int _5;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _5 = graph_media_main (argv_2(D), argc_3(D)); [tail call]
+  return _5;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 2 (argv_2(D) - 2 )
+Partition 3 (argc_3(D) - 3 )
+Partition 5 (_5 - 5 )
+
+
+Partition map 
+
+Partition 0 (argv_2(D) - 2 )
+Partition 1 (argc_3(D) - 3 )
+
+
+Live on entry to BB2 : argv_2(D)  argc_3(D)  
+
+Conflict graph:
+
+After sorting:
+Coalesce List:
+
+Partition map 
+
+Partition 0 (argv_2(D) - 2 )
+Partition 1 (argc_3(D) - 3 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (argv_2(D) - 2 )
+Partition 1 (argc_3(D) - 3 )
+Partition 2 (_5 - 5 )
+
+main (int argc, char * * argv)
+{
+  int _5;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _5 = graph_media_main (argv_2(D), argc_3(D)); [tail call]
+  return _5;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; _5 = graph_media_main (argv_2(D), argc_3(D)); [tail call]
+
+(insn 7 6 8 2 (set (reg:SI 4 si)
+        (reg/v:SI 61 [ argc ])) src/main.c:41 -1
+     (nil))
+
+(insn 8 7 9 2 (set (reg:DI 5 di)
+        (reg/v/f:DI 62 [ argv ])) src/main.c:41 -1
+     (nil))
+
+(call_insn/j 9 8 10 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("graph_media_main") [flags 0x3]  <function_decl 0x2b2c1f7e5a00 graph_media_main>) [0 graph_media_main S1 A8])
+            (const_int 0 [0]))) src/main.c:41 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (expr_list:REG_BR_PRED (use (reg:SI 4 si))
+            (nil))))
+
+(barrier 10 9 0)
+deleting block 5
+deleting block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v:SI 61 [ argc ])
+        (reg:SI 5 di [ argc ])) src/main.c:37 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:DI 62 [ argv ])
+        (reg:DI 4 si [ argv ])) src/main.c:37 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:SI 4 si)
+        (reg/v:SI 61 [ argc ])) src/main.c:41 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:DI 5 di)
+        (reg/v/f:DI 62 [ argv ])) src/main.c:41 -1
+     (nil))
+(call_insn/j 9 8 10 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("graph_media_main") [flags 0x3]  <function_decl 0x2b2c1f7e5a00 graph_media_main>) [0 graph_media_main S1 A8])
+            (const_int 0 [0]))) src/main.c:41 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (expr_list:REG_BR_PRED (use (reg:SI 4 si))
+            (nil))))
+;;  succ:       EXIT [100.0%]  (ABNORMAL,SIBCALL)
+
+(barrier 10 9 0)

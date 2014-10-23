@@ -1,0 +1,141 @@
+AUTOMAKE_OPTIONS = subdir-objects
+
+noinst_LTLIBRARIES = src/libmodelos.la
+
+src_libmodelos_la_SOURCES = \
+	src/controlador/graphmedia.vala \
+	src/controlador/appgui.vala \
+	src/lib/BaseDatos.vala \
+	src/modelos/persona.vala \
+	src/modelos/artista.vala \
+	src/modelos/archivo.vala \
+	src/modelos/cancion.vala \
+	src/modelos/imagen.vala \
+	src/modelos/album.vala \
+	src/modelos/albumcanciones.vala \
+	src/modelos/albumimagenes.vala \
+	src/modelos/epoca.vala \
+	src/modelos/sentimientos.vala \
+	$(NULL)
+
+src_libmodelos_la_VALAFLAGS = \
+	--target-glib=2.38	\
+	--vapi src/modelos.vapi \
+	--header src/modelos.h \
+	--gresources $(gresource_file)		\
+	@GRAPHMEDIA_PACKAGES@		\
+	@GSTREAMER_PACKAGES@		\
+	@GSTREAMERIF_PACKAGES@		\
+	$(NULL)
+
+src_libmodelos_la_CFLAGS =		\
+	@GRAPHMEDIA_CFLAGS@		\
+	@GSTREAMER_CFLAGS@		\
+	@GSTREAMERIF_CFLAGS@		\
+	-w
+	$(NULL)
+
+src_libmodelos_la_LIBADD =		\
+	@GRAPHMEDIA_LIBS@		\
+	@GSTREAMER_LIBS@		\
+	@GSTREAMERIF_LIBS@		\
+	$(NULL)
+
+bin_PROGRAMS = bin/graph_media 
+
+bin_graph_media_SOURCES = 		\
+	src/main.vala \
+	src/modelos.vapi \
+	src/resources.c \
+	$(NULL)
+
+bin_graph_media_VALAFLAGS =		\
+	--target-glib=2.38	\
+	@GRAPHMEDIA_PACKAGES@		\
+	@GSTREAMER_PACKAGES@		\
+	@GSTREAMERIF_PACKAGES@		\
+	--gresources $(gresource_file)		\
+	$(NULL)
+
+bin_graph_media_CFLAGS =		\
+	@GRAPHMEDIA_CFLAGS@		\
+	@GSTREAMER_CFLAGS@		\
+	@GSTREAMERIF_CFLAGS@		\
+	-I$(srcdir)/src \
+	-w
+	$(NULL)
+
+bin_graph_media_LDADD =		\
+	@GRAPHMEDIA_LIBS@		\
+	@GSTREAMER_LIBS@		\
+	@GSTREAMERIF_LIBS@		\
+	src/libmodelos.la \
+	$(NULL)
+
+gresource_file = $(top_srcdir)/data/exampleapp.gresource.xml
+resource_files = 				\
+	$(top_srcdir)/data/app-menu.ui		\
+	$(top_srcdir)/data/gears-menu.ui	\
+	$(top_srcdir)/data/prefs.ui		\
+	$(top_srcdir)/data/window.ui		\
+	$(NULL)
+
+src/resources.c: $(gresource_file) $(resource_files)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) 	\
+		--target=$@			\
+		--sourcedir=$(top_srcdir)/data	\
+		--generate-source $<
+
+schema_file = $(top_srcdir)/data/org.gtk.exampleapp.gschema.xml
+
+gsettings_SCHEMAS =				\
+	$(schema_file)				\
+	$(NULL)
+
+@GSETTINGS_RULES@
+
+data/gschemas.compiled: $(schema_file)
+	$(GLIB_COMPILE_SCHEMAS) $(top_srcdir)/data
+
+data_desktopdir = $(datadir)/applications
+data_desktop_DATA = data/exampleapp.desktop
+
+data/exampleapp.desktop: data/exampleapp.desktop.in
+	$(AM_V_GEN) [ -d $(@D) ] || $(mkdir_p) $(@D) ; \
+		sed -e "s|\@bindir\@|$(bindir)|g" $< > $@
+
+data_iconsdir = $(datadir)/icons/hicolor/48x48/apps
+data_icons_DATA = data/exampleapp.png
+
+noinst_DATA =				\
+	$(gresource_file)		\
+	$(resource_files)		\
+	$(data/exampleapp.desktop:
+
+bin_PROGRAMS += test/run
+
+test_run_SOURCES =		\
+	src/test/testcase.vala \
+	src/test/testpersona.vala \
+	src/test/generadorcadenas.vala \
+	src/test/testgenerador.vala \
+	src/test/testconexion.vala \
+	src/test/main.vala \
+	src/modelos.vapi \
+	$(NULL)
+
+test_run_VALAFLAGS =		\
+	--target-glib=2.38	\
+	@GRAPHMEDIA_PACKAGES@		\
+	$(NULL)
+
+test_run_CFLAGS =		\
+	@GRAPHMEDIA_CFLAGS@		\
+	-I$(srcdir)/src \
+	-w \
+	$(NULL)
+
+test_run_LDADD =		\
+	@GRAPHMEDIA_LIBS@		\
+	src/libmodelos.la \
+	$(NULL)

@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<interface>
+  <object class="GtkBox" id="contexto_musica">
+  <property name="visible">True</property>
+  <property name="can_focus">False</property>
+    <child>
+      <object class="GtkGrid" id="grid_musica">
+      <property name="visible">True</property>
+      <property name="margin">1</property>
+      <property name="row-spacing">6</property>
+      <property name="column-spacing">0</property>
+      <child>
+         <object class="GtkFrame" id="navegacion_musica">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="margin">5</property>
+            <property name="label-xalign">0</property>
+            <property name="height-request">230</property>
+            <property name="label"> Navegar </property>
+            <child>
+              <object class="GtkListBox" id="consultas_musica">
+              <property name="visible">True</property>
+              <property name="selection-mode">none</property>
+              <property name="height-request">200</property>
+
+              <child>
+              <object class="GtkButton" id="mostrar_albums">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Albums</property>
+                <property name="label">Albums</property>
+                <signal name="clicked" handler="musica_mostrar_albums" swapped="no"/>
+              </object>
+              </child>
+
+              <child>
+              <object class="GtkButton" id="mostrar_artistas">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Artistas</property>
+                <property name="label">Artistas</property>
+                <signal name="clicked" handler="musica_mostrar_artistas" swapped="no"/>
+              </object>
+              </child>
+
+              <child>
+              <object class="GtkButton" id="mostrar_canciones">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Canciones</property>
+                <property name="label">Canciones</property>
+                <signal name="clicked" handler="musica_mostrar_canciones" swapped="no"/>
+              </object>
+              </child>
+
+              </object>
+            </child>
+            
+
+         </object>
+        <packing>
+          <property name="left-attach">0</property>
+          <property name="top-attach">0</property>
+        </packing>
+      </child>
+     <child>
+         <object class="GtkFrame" id="edicion_musica">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="margin">6</property>
+            <property name="height-request">60</property>
+            <property name="label">Acciones</property>
+            <property name="shadow-type">etched-out</property>
+         <child>
+              <object class="GtkBox" id="acciones_albums">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="orientation">horizontal</property>
+                <property name="spacing">6</property>
+                <child>
+                  <object class="GtkButton" id="registrar">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="height-request">30</property>
+                    <property name="width-request">30</property>
+                    <property name="tooltip-text" translatable="yes">Nuevo album</property>
+                    <signal name="clicked" handler="musica_registar" swapped="no"/>
+                    <child>
+                      <object class="GtkImage" id="nuevo_registro_album">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="icon-name">list-add-symbolic</property>
+                        <property name="icon-size">1</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="editar">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="height-request">30</property>
+                    <property name="width-request">30</property>
+
+                    <property name="tooltip-text" translatable="yes">Editar Album</property>
+                    <signal name="clicked" handler="musica_editar" swapped="no"/>
+                    <child>
+                      <object class="GtkImage" id="editar_album_image">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="icon-name"> media-view-subtitles-symbolic</property>
+                        <property name="icon-size">1</property>
+                      </object>
+                    </child>
+                  </object>
+                
+                </child>
+                <child>
+                  <object class="GtkButton" id="eliminar">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="height-request">30</property>
+                    <property name="width-request">30</property>
+
+                    <property name="tooltip-text" translatable="yes">Eliminar album</property>
+                    <signal name="clicked" handler="musica_eliminar" swapped="no"/>
+                    <child>
+                      <object class="GtkImage" id="clear_artist_images">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="icon-name">list-remove-symbolic</property>
+                        <property name="icon-size">1</property>
+                      </object>
+                    </child>
+                  </object>
+             
+                </child>
+              </object>
+         </child>
+         </object>
+        <packing>
+          <property name="left-attach">0</property>
+          <property name="top-attach">1</property>
+        </packing>
+    </child>
+   
+    </object>
+
+    </child>
+  </object>
+
+  <object class="GtkBox" id="contexto_sentimientos">
+  <property name="visible">True</property>
+  <property name="can_focus">False</property>
+  <child>
+     <object class="GtkButton" id="open_artist_image_button_">
+      <property name="visible">True</property>
+      <property name="can-focus">True</property>
+      <property name="receives-default">True</property>
+      <property name="tooltip-text" translatable="yes">Open image</property>
+      <signal name="clicked" handler="on_open_artist_clicked" swapped="no"/>
+      <child>
+        <object class="GtkImage" id="open_artist_image">
+          <property name="visible">True</property>
+          <property name="can-focus">False</property>
+          <property name="icon-name">document-open-symbolic</property>
+          <property name="icon-size">1</property>
+        </object>
+      </child>
+    </object>
+  </child>
+
+  </object>
+
+  <object class="GtkBox" id="contexto_imagenes">
+  <property name="visible">True</property>
+  <property name="can_focus">False</property>
+  <child>
+     <object class="GtkButton" id="open_artist_image_butto_">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">True</property>
+                                    <property name="receives-default">True</property>
+                                    <property name="tooltip-text" translatable="yes">Open image</property>
+                                    <signal name="clicked" handler="on_open_artist_clicked" swapped="no"/>
+                                    <child>
+                                      <object class="GtkImage" id="open_artist_dimage">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="icon-name">list-remove-symbolic</property>
+                                        <property name="icon-size">1</property>
+                                      </object>
+                                    </child>
+                                  </object>
+  </child>
+
+  </object>
+
+</interface>

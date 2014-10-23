@@ -1,0 +1,261 @@
+
+;; Function graphmedia_get_resource (graphmedia_get_resource, funcdef_no=28, decl_uid=21892, cgraph_uid=28)
+
+graphmedia_get_resource ()
+{
+  struct GResource * _3;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _3 = g_static_resource_get_resource (&static_resource); [tail call]
+  return _3;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 3 (_3 - 3 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (_3 - 3 )
+
+graphmedia_get_resource ()
+{
+  struct GResource * _3;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _3 = g_static_resource_get_resource (&static_resource); [tail call]
+  return _3;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; _3 = g_static_resource_get_resource (&static_resource); [tail call]
+
+(insn 5 4 6 2 (set (reg:DI 5 di)
+        (symbol_ref:DI ("static_resource") [flags 0x2]  <var_decl 0x2b83cef06558 static_resource>)) src/resources.c:6455 -1
+     (nil))
+
+(call_insn/j 6 5 7 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("g_static_resource_get_resource") [flags 0x41]  <function_decl 0x2b83ced8b400 g_static_resource_get_resource>) [0 g_static_resource_get_resource S1 A8])
+            (const_int 0 [0]))) src/resources.c:6455 -1
+     (nil)
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+
+(barrier 7 6 0)
+deleting block 5
+deleting block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:DI 5 di)
+        (symbol_ref:DI ("static_resource") [flags 0x2]  <var_decl 0x2b83cef06558 static_resource>)) src/resources.c:6455 -1
+     (nil))
+(call_insn/j 6 5 7 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("g_static_resource_get_resource") [flags 0x41]  <function_decl 0x2b83ced8b400 g_static_resource_get_resource>) [0 g_static_resource_get_resource S1 A8])
+            (const_int 0 [0]))) src/resources.c:6455 -1
+     (nil)
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+;;  succ:       EXIT [100.0%]  (ABNORMAL,SIBCALL)
+
+(barrier 7 6 0)
+
+;; Function resource_constructor (resource_constructor, funcdef_no=29, decl_uid=21897, cgraph_uid=29) (executed once)
+
+resource_constructor ()
+{
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  g_static_resource_init (&static_resource); [tail call]
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+
+After Coalescing:
+
+Partition map 
+
+
+resource_constructor ()
+{
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  g_static_resource_init (&static_resource); [tail call]
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; g_static_resource_init (&static_resource); [tail call]
+
+(insn 5 4 6 2 (set (reg:DI 5 di)
+        (symbol_ref:DI ("static_resource") [flags 0x2]  <var_decl 0x2b83cef06558 static_resource>)) src/resources.c:6566 -1
+     (nil))
+
+(call_insn/j 6 5 7 2 (call (mem:QI (symbol_ref:DI ("g_static_resource_init") [flags 0x41]  <function_decl 0x2b83ced8b200 g_static_resource_init>) [0 g_static_resource_init S1 A8])
+        (const_int 0 [0])) src/resources.c:6566 -1
+     (nil)
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+
+(barrier 7 6 0)
+deleting block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:DI 5 di)
+        (symbol_ref:DI ("static_resource") [flags 0x2]  <var_decl 0x2b83cef06558 static_resource>)) src/resources.c:6566 -1
+     (nil))
+(call_insn/j 6 5 7 2 (call (mem:QI (symbol_ref:DI ("g_static_resource_init") [flags 0x41]  <function_decl 0x2b83ced8b200 g_static_resource_init>) [0 g_static_resource_init S1 A8])
+        (const_int 0 [0])) src/resources.c:6566 -1
+     (nil)
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+;;  succ:       EXIT [100.0%]  (ABNORMAL,SIBCALL)
+
+(barrier 7 6 0)
+
+;; Function resource_destructor (resource_destructor, funcdef_no=30, decl_uid=21899, cgraph_uid=30) (executed once)
+
+resource_destructor ()
+{
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  g_static_resource_fini (&static_resource); [tail call]
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+
+After Coalescing:
+
+Partition map 
+
+
+resource_destructor ()
+{
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  g_static_resource_fini (&static_resource); [tail call]
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; g_static_resource_fini (&static_resource); [tail call]
+
+(insn 5 4 6 2 (set (reg:DI 5 di)
+        (symbol_ref:DI ("static_resource") [flags 0x2]  <var_decl 0x2b83cef06558 static_resource>)) src/resources.c:6571 -1
+     (nil))
+
+(call_insn/j 6 5 7 2 (call (mem:QI (symbol_ref:DI ("g_static_resource_fini") [flags 0x41]  <function_decl 0x2b83ced8b300 g_static_resource_fini>) [0 g_static_resource_fini S1 A8])
+        (const_int 0 [0])) src/resources.c:6571 -1
+     (nil)
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+
+(barrier 7 6 0)
+deleting block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 10000, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY [100.0%]  (FALLTHRU)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:DI 5 di)
+        (symbol_ref:DI ("static_resource") [flags 0x2]  <var_decl 0x2b83cef06558 static_resource>)) src/resources.c:6571 -1
+     (nil))
+(call_insn/j 6 5 7 2 (call (mem:QI (symbol_ref:DI ("g_static_resource_fini") [flags 0x41]  <function_decl 0x2b83ced8b300 g_static_resource_fini>) [0 g_static_resource_fini S1 A8])
+        (const_int 0 [0])) src/resources.c:6571 -1
+     (nil)
+    (expr_list:REG_FRAME_RELATED_EXPR (use (reg:DI 5 di))
+        (nil)))
+;;  succ:       EXIT [100.0%]  (ABNORMAL,SIBCALL)
+
+(barrier 7 6 0)
